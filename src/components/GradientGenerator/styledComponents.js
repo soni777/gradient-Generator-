@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const MainContainer = styled.div`
   background: linear-gradient(
     to ${props => props.directions},
-    ${props => props.gradientTwo},
-    ${props => props.gradientOne}
+    ${props => props.gradientOne},
+    ${props => props.gradientTwo}
   );
   min-height: 100vh;
   padding: 5px;
