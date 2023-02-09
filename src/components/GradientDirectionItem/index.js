@@ -1,23 +1,22 @@
-import {CustomButton} from './styledComponents'
+import {ListItem, DirectionButton} from './styledComponents'
 
 const GradientDirectionItem = props => {
-  const {data, active, onClickDirection} = props
-
-  const onChangeClicked = () => {
-    onClickDirection(data.value)
+  const {gradientDirectionDetails, isActive, clickGradientDirectionItem} = props
+  const {displayText, value} = gradientDirectionDetails
+  const onClickGradientDirectionItem = () => {
+    clickGradientDirectionItem(value)
   }
 
   return (
-    <li>
-      <CustomButton
-        active={active}
-        value={data.value}
-        type="text"
-        onClick={onChangeClicked}
+    <ListItem>
+      <DirectionButton
+        isActive={isActive}
+        type="button"
+        onClick={onClickGradientDirectionItem}
       >
-        {data.displayText}
-      </CustomButton>
-    </li>
+        {displayText}
+      </DirectionButton>
+    </ListItem>
   )
 }
 

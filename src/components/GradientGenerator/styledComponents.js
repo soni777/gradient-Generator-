@@ -1,66 +1,104 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-export const MainContainer = styled.div`
-  background: linear-gradient(
-    to ${props => props.directions},
-    ${props => props.gradientOne},
-    ${props => props.gradientTwo}
-  );
+export const GradientGeneratorContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(${props => props.gradientValue});
   min-height: 100vh;
-  padding: 5px;
+`
+
+export const ResponsiveContainer = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto';
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 550px;
+  @media screen and (min-width: 768px) {
+    width: 85%;
+    max-width: 1110px;
+  }
 `
 
-export const Title = styled.h1`
+export const Heading = styled.h1`
   color: #ffffff;
-  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
 `
 
-export const SubHeading = styled.p`
-  color: #ffffff79;
+export const DirectionsDescription = styled.p`
+  color: #ededed;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.5;
 `
 
-export const DirectionContainer = styled.ul`
+export const GradientDirectionList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    width: 60%;
+    max-width: 425px;
+  }
 `
 
-export const FormContainer = styled.form`
-  display: flex;
-  flex-direction: column;
-`
-
-export const RowCon = styled.div`
-  display: flex;
-`
-
-export const ColorContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-export const ColorName = styled.p`
+export const ColorsPickersDescription = styled.p`
   color: #ededed;
-  margin: 5px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.5;
 `
 
-export const Input = styled.input`
-  width: 120px;
+export const ColorPickerContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  min-width: 320px;
+`
+
+export const CustomInputAndColorContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ColorValue = styled.p`
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+`
+
+export const CustomInput = styled.input`
+  width: 100px;
+  height: 50px;
+  background-color: transparent;
   border: none;
+  border-radius: 10px;
   outline: none;
-  margin: 5px;
+  cursor: pointer;
 `
 
-export const SubmitButton = styled.button`
-  background: #00c9b7;
+export const GenerateButton = styled.button`
   color: #1e293b;
-  border-radius: 5px;
-  padding: 10px;
-  width: 120px;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #00c9b7;
+  min-width: 25px;
+  border-radius: 6px;
   border: none;
+  padding: 12px 24px;
+  margin: 25px 0px 10px 15px;
   outline: none;
-  margin-top: 20px;
+  cursor: pointer;
 `
